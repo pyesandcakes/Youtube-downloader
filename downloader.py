@@ -44,12 +44,12 @@ if one_input == "1":
                 print('Downloading video...')
                 yd_vid.download(dwpth_vid)
                 yd_vid.on_progress
-       
+                print("\n Download finished. \n Find files in", dwpth_vid)
         elif user_input == '2':
                 print('Downloading audio...')
                 yd_aud.download(dwpth_aud)
                 yd_aud.on_progress
-
+                print("\n Download finished. \n Find files in", dwpth_aud)
 if one_input == "3":
         pl_link=input("Insert playlist URL ")
         print("Searching...")
