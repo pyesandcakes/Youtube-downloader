@@ -1,24 +1,26 @@
 from pytube import YouTube
 from sys import argv
 from pytube.cli import on_progress
-link=argv[0]
+import os
+dwpth=os.getcwd()+"\Video"
+#link=argv[0]
 
-video = YouTube(link, on_progress_callback=on_progress)
+video = YouTube("https://www.youtube.com/watch?v=yGXaAWbzl5A", on_progress_callback=on_progress)
 descr = video.description
-
+info = descr[:75] + (descr[75:] and '..')
 yd_vid = video.streams.get_highest_resolution()
-yd_aud = video.streams.get_audio_only()
-print(video.title,descr)
-user_input = ''
+#yd_aud = video.streams.get_audio_only()
+print(video.title)
+print(info)
 
+user_input = ''
 user_input = input(
         'Yes or No  ')
-
 if user_input == 'Yes':
         print('Downloading video...')
-        yd_vid.download("C:/Users/Bruno/Documents/Youtube downloader/Video")
+        yd_vid.download(dwpth)
 
-
+quit()
 
 #user_input = ''
 
