@@ -2,38 +2,30 @@ from pytube import YouTube
 from sys import argv
 from pytube.cli import on_progress
 import os
-dwpth=os.getcwd()+"\Video"
+dwpth_vid=os.getcwd()+"\Video"
+dwpth_aud=os.getcwd()+"\Audio"
 link=argv[1]
-
+print("Searching...")
 video = YouTube(link, on_progress_callback=on_progress)
+audio = YouTube(link, on_progress_callback=on_progress)
 descr = video.description
-info = descr[:75] + (descr[75:] and '..')
+info = descr[:100] + (descr[100:] and '..')
 yd_vid = video.streams.get_highest_resolution()
-yd_aud = video.streams.get_audio_only()
+yd_aud = audio.streams.get_audio_only()
 print(video.title)
 print(info)
 
 user_input = ''
-user_input = input(
-        'Yes or No  ')
-if user_input == 'Yes':
-        print('Downloading video...')
-        yd_vid.download(dwpth)
+user_input = input('Pick one: 1) Video | 2) Audio ')
 
+if user_input == '1':
+        print('Downloading video...')
+        yd_vid.download(dwpth_vid)
+        yd_vid.on_progress
+       
+elif user_input == '2':
+        print('Downloading audio...')
+        yd_aud.download(dwpth_aud)
+        yd_aud.on_progress
 quit()
 
-user_input_v = ''
-
-while True:
-    user_input_v = input(
-        'Pick one: 1) Video | 2) Audio ')
-
-    if user_input_v == '1' or "Video" or "video":
-        print('Downloading video...')
-       yd_vid.download("C:/Users/Bruno/Documents/Youtube downloader/Video")
-       yd_vid.on_progress
-       break
-   elif user_input_v == '2' or "Audio" or "audio":
-       print('Downloading audio...')
-       yd_aud.download("C:/Users/Bruno/Documents/Youtube downloader/Audio")
-      break
