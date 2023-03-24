@@ -3,9 +3,9 @@ from sys import argv
 from pytube.cli import on_progress
 import os
 dwpth=os.getcwd()+"\Video"
-#link=argv[0]
+link=argv[1]
 
-video = YouTube("https://www.youtube.com/watch?v=yGXaAWbzl5A", on_progress_callback=on_progress)
+video = YouTube(link, on_progress_callback=on_progress)
 descr = video.description
 info = descr[:75] + (descr[75:] and '..')
 yd_vid = video.streams.get_highest_resolution()
