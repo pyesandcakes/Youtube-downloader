@@ -86,3 +86,4 @@ if one_input == "3":
                         pl_str.on_progress
                         print()
                 print("\n Download finished. \n Find files in", dwpth_aud_pl)
+input()
