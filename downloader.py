@@ -1,10 +1,9 @@
 from pytube import YouTube
-from sys import argv
 from pytube.cli import on_progress
 import os
 dwpth_vid=os.getcwd()+"\Video"
 dwpth_aud=os.getcwd()+"\Audio"
-link=argv[1]
+link=input("Insert URL ")
 print("Searching...")
 video = YouTube(link, on_progress_callback=on_progress)
 audio = YouTube(link, on_progress_callback=on_progress)
@@ -27,5 +26,5 @@ elif user_input == '2':
         print('Downloading audio...')
         yd_aud.download(dwpth_aud)
         yd_aud.on_progress
-quit()
+
 
