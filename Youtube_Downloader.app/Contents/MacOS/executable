@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+cd /Users/Bruno/Documents/GitHub/Youtube-downloader
+python3 downloader_mac.py $1

@@ -6,3 +6,8 @@ build
 dist
 downloader.spec
 studysession
+mac.sh
+youtube.icon.png
+Youtube_Downloader.app/Icon
+Youtube_Downloader.app/Contents/Info.plist
+
