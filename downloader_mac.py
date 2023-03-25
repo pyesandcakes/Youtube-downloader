@@ -4,10 +4,10 @@ import os
 from pytube import Channel
 from pytube import Playlist
 
-dwpth_vid=os.getcwd()+"\Video"
-dwpth_vid_pl=os.getcwd()+"\Video\Playlists"
-dwpth_aud_pl=os.getcwd()+"\Audio\Playlists"
-dwpth_aud=os.getcwd()+"\Audio"
+dwpth_vid=os.getcwd()+"/Video"
+dwpth_vid_pl=os.getcwd()+"/Video/Playlists"
+dwpth_aud_pl=os.getcwd()+"/Audio/Playlists"
+dwpth_aud=os.getcwd()+"/Audio"
 
 one_input=""
 one_input=input("Download: 1) One Video | 2) Whole Channel | 3) Playlist ")
@@ -62,7 +62,7 @@ if one_input == "3":
         user_input = input('Pick one: 1) Video | 2) Audio ')
         if user_input == '1':
                 print('Downloading videos...')
-                dwpth_vid_pl +="\\"+pth
+                dwpth_vid_pl +="/"+pth
                 for video in pl_str.videos:
                         video.register_on_progress_callback(on_progress)
                         pl_str=video.streams.get_highest_resolution()
@@ -75,7 +75,7 @@ if one_input == "3":
                 print("\n Download finished. \n Find files in", dwpth_vid_pl)
         elif user_input == '2':
                 print('Downloading audio...')
-                dwpth_aud_pl +="\\"+pth
+                dwpth_aud_pl +="/"+pth
                 for video in pl_str.videos:
                         video.register_on_progress_callback(on_progress)
                         pl_str=video.streams.get_audio_only()
